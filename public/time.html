@@ -31,16 +31,9 @@
         ctx.fill();
 
         //绘制
-        drawDial(ctx);
-
-        ctx.fillStyle = '#000';
-        
-        // ctx.beginPath();
-        // ctx.rect(0,-5,150,10)
-        // ctx.closePath();
-        // ctx.fill();
-        nowTime = new Date()
-        drawPointer(ctx,nowTime.getHours(),nowTime.getMinutes(),nowTime.getSeconds())
+        drawDial(ctx);  //绘制表盘
+        nowTime = new Date(); //创建时间对象 
+        drawPointer(ctx,nowTime.getHours(),nowTime.getMinutes(),nowTime.getSeconds());  //绘制指针
 
       }, 10);
       
@@ -81,7 +74,7 @@
 
     //封装绘制时分秒针的函数
     function drawPointer(ctx,hour,min,sec){
-     
+      ctx.fillStyle = '#000';
       //绘制时针
       ctx.save(); //保存ctx状态
       hourMin = (hour%12)*60 + min;
